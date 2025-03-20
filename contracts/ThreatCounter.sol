@@ -11,10 +11,13 @@ contract ThreatCounter {
     }
 
     function submitThreat(string memory hashInput) public {
+        require(bytes(hashInput).length > 0, "Input cannot be empty"); //ensures the hash is not empty
         bytes32 hash = keccak256(abi.encodePacked(hashInput, salt)); // Hash the input string to bytes32
+
         require(!submittedHashes[hash], "Hash already submitted"); // Revert if hash already submitted
+
         submittedHashes[hash] = true;
-        totalSubmissions += 1;
+        totalSubmissions++;
     }
 
     function getTotalSubmissions() public view returns (uint) {
