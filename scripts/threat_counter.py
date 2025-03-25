@@ -121,3 +121,4 @@ while True:
         hash_bytes = event['args']['hash']
         hash_hex = w3.to_hex(hash_bytes)  # Convert bytes to hex string
         print(f"Event detected! Hash: {hash_hex}, HashInput: {event['args']['hashInput']}")
+        
