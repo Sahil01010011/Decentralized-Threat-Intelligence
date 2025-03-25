@@ -32,3 +32,28 @@ I’m using Remix (a website) and Ganache GUI (a fake blockchain) to test my con
 3. **Clone My Repo (If You Want)**:
    - If you wanna see my code, you can clone it:
    - `git clone https://github.com/Sahil01010011/Decentralized-Threat-Intelligence.git`
+
+## My Python Script (Week 4)
+I made a Python script to talk to my contract! It deploys the contract, submits a threat, checks the count, and listens for events.
+
+### How to Run My Script
+1. **Set Up Python**:
+   - Make sure you have Python installed (I’m using Python 3.9.10, and it works fine!).
+   - Install the `web3.py` thingy: `pip install web3`
+
+2. **Run the Script**:
+- Make sure Ganache GUI is running (port `8545`).
+- Go to the `scripts` folder in my repo: `Decentralized-Threat-Intelligence\scripts`
+- Run the script: `python threat_counter.py`
+
+3. **What It Does**:
+- Deploys my contract.
+- Submits a threat called `"samplehash"`.
+- Tells me how many submissions (should be `1`).
+- Listens for the `ThreatSubmitted` event (try submitting another threat in Remix to see it!).
+
+### What I Saw
+- It worked! It deployed the contract at `0x6C096120E1A197967C963218917a4aebb79BF995`, submitted a threat, and said `Total submissions: 1`.
+- I submitted another threat in Remix (`"threat5"`), and it showed the event with the hash and input.
+- After submitting threats in Remix, `totalSubmissions` increased to `3` because I called `submitThreat` three times in total.
+- I saved a pic of the output in `screenshots/python_script_output.png`.
